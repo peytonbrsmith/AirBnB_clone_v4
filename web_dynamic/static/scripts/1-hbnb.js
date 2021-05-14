@@ -1,18 +1,27 @@
 $( document ).ready(function() {
 
-    let amenities = []
-
+    let amenities_names = [];
+    let amenities_ids = [];
     console.log('test');
 
     $('input:checkbox').change(
         function(){
             if ($(this).is(':checked')) {
-                amenities.push($(this).parent().parent().attr("data-id"))
+                let data_id = ($(this).parent().parent().attr("data-id"));
+                let name = ($(this).parents('li').attr("data-name"));
+                amenities_ids.push(data_id);
+                amenities_names.push(name);
             }
             else
             {
-                amenities.pop($(this).parent().parent().attr("data-id"))
+                amenities_ids.pop('data-id');
+                amenities_names.pop('data-name');
+                console.log(amenities_names);
             }
-            $(".amenities h4").text(amenities)
+            if (amenities_names.length === 0) {
+                $(".amenities h4").html("&nbsp;");
+            } else {
+                $(".amenities h4").text(amenities_names.join(", "));
+            }
         });
 });

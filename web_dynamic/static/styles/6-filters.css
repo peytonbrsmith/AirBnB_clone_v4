@@ -40,6 +40,10 @@ button:hover {
     margin-top: 0;
     font-weight: 400;
     font-size: 14px;
+    /* width: 100%; */
+    display: inline-block; /* for inline elements e.g. span, strong, em etc */
+    text-overflow: ellipsis;
+    width: calc(80%); /* The trick is here! */
 }
 .locations {
     height: 100%;
@@ -49,7 +53,16 @@ button:hover {
 .amenities {
     height: 100%;
     width: 25%;
+    /* white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis; */
 }
+/* div.amenities {
+    display: inline-block;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+} */
 
 .popover {
     visibility: hidden;
