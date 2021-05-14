@@ -24,3 +24,16 @@ $( document ).ready(function() {
             }
         });
 });
+
+$(function()
+{
+	$.get("http://0.0.0.0:5001/api/v1/status/", function(data, textStatus)
+	{
+        if (data.status === "OK") {
+            $(".apistatus").addClass("available")
+        }
+        else {
+            $(".apistatus").removeClass("available")
+        }
+    });
+});
