@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?{{ cache_id }}">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?{{ cache_id }}">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css?{{ cache_id }}">
@@ -10,6 +10,7 @@
     <link rel="icon" href="../static/images/icon.png?{{ cache_id }}">
     <title>HBnB</title>
 	<SCRIPT src="https://code.jquery.com/jquery-3.2.1.min.js"></SCRIPT>
+	<script type="text/javascript" src="../static/scripts/1-hbnb.js?{{ cache_id }}" defer></script>
   </head>
   <body>
     <header>
@@ -41,7 +42,7 @@
 	  <div class="popover">
 	    <ul>
 	      {% for amenity in amenities %}
-	      <li><INPUT type="checkbox"/>{{ amenity.name }}</li>
+	      	<li data-id="{{ amenity.id }}" data-name="{{ amenity.name }}"><div class="acb"><INPUT type="checkbox"/></div>{{ amenity.name }}</li>
 	      {% endfor %}
 	    </ul>
 	  </div>
